@@ -27,7 +27,7 @@ class BrowseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Browse Product"
+        title = "Browse"
         view.backgroundColor = .systemBackground
         // MARK: - UI Setup
         setupUI()
