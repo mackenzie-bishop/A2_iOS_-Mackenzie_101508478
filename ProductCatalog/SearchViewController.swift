@@ -26,6 +26,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         
         // MARK: - UI Setup
         setupUI()
+        
+        searchBar.autocapitalizationType = .none
     }
 
     private func setupUI() {
