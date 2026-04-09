@@ -62,7 +62,7 @@ class BrowseViewController: UIViewController {
         let buttonStack = UIStackView(arrangedSubviews: [previousButton, nextButton])
         buttonStack.axis = .horizontal
         buttonStack.distribution = .fillEqually
-        buttonStack.spacing = 16
+        buttonStack.spacing = 18
 
         let stack = UIStackView(arrangedSubviews: [
             idLabel, nameLabel, descLabel, priceLabel, providerLabel, buttonStack
