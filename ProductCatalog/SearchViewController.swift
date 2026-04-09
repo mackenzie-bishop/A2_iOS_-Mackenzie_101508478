@@ -30,7 +30,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         searchBar.placeholder = "Search products..."
         searchBar.delegate = self
 
-        resultLabel.text = "Enter search text"
+        resultLabel.text = "Type to search for a product"
         resultLabel.font = .systemFont(ofSize: 18, weight: .medium)
 
         descLabel.numberOfLines = 0
