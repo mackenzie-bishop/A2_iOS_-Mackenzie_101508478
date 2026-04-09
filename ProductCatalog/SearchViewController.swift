@@ -87,7 +87,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                 priceLabel.text = String(format: "Price: $%.2f", product.price)
                 providerLabel.text = "Provider: \(product.provider ?? "")"
             } else {
-                resultLabel.text = "No matching product found"
+                resultLabel.text = "No matching product found."
                 clearLabels()
             }
         } catch {
