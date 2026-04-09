@@ -29,7 +29,9 @@ class BrowseViewController: UIViewController {
         super.viewDidLoad()
         title = "Browse Product"
         view.backgroundColor = .systemBackground
+        // MARK: - UI Setup
         setupUI()
+        // MARK: - Data Handling
         fetchProducts()
         showCurrentProduct()
     }
