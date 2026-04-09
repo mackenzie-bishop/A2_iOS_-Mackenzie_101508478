@@ -61,7 +61,7 @@ class AddProductViewController: UIViewController {
         ])
     }
 
-    // Validates user input and saves a new product
+    // Validate all input fields before saving
     @objc private func saveTapped() {
         guard
             let idText = idField.text, let id = Int32(idText),
