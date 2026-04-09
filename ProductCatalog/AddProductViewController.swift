@@ -24,6 +24,8 @@ class AddProductViewController: UIViewController {
         super.viewDidLoad()
         title = "Add Product"
         view.backgroundColor = .systemBackground
+        
+        // MARK: - UI Setup
         setupUI()
     }
 
