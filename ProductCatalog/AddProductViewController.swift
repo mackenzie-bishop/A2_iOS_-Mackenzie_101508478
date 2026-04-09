@@ -70,7 +70,7 @@ class AddProductViewController: UIViewController {
             let priceText = priceField.text, let price = Double(priceText),
             let provider = providerField.text, !provider.isEmpty
         else {
-            showAlert(title: "Error", message: "Please fill in all fields correctly.")
+            showAlert(title: "Error", message: "Please fill in all fields with valid values.")
             return
         }
 
