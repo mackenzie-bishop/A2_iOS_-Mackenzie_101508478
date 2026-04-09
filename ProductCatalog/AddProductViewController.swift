@@ -75,7 +75,8 @@ class AddProductViewController: UIViewController {
                 showAlert(title: "Duplicate ID", message: "A product with that ID already exists.")
                 return
             }
-        } catch {
+        }
+        catch {
             showAlert(title: "Error", message: "Could not validate Product ID.")
             return
         }
