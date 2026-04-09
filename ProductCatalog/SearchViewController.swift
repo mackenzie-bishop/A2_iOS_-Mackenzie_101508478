@@ -1,8 +1,10 @@
 import UIKit
 import CoreData
 
+// Allows users to search for products by name or description
 class SearchViewController: UIViewController, UISearchBarDelegate {
 
+    // UI elements for search and displaying results
     private let searchBar = UISearchBar()
     private let resultLabel = UILabel()
     private let idLabel = UILabel()
@@ -11,6 +13,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     private let priceLabel = UILabel()
     private let providerLabel = UILabel()
 
+    // Access Core Data context
     private var context: NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
@@ -48,12 +51,14 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         ])
     }
 
+    // Called when user taps search on keyboard
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         performSearch(text: searchBar.text ?? "")
     }
 
     private func performSearch(text: String) {
+        // Prevent empty or whitespace-only searches
         guard !text.trimmingCharacters(in: .whitespaces).isEmpty else {
             resultLabel.text = "Enter search text"
             clearLabels()
