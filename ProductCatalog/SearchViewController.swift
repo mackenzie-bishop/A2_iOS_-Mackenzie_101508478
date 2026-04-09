@@ -27,7 +27,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     }
 
     private func setupUI() {
-        searchBar.placeholder = "Search by name or description"
+        searchBar.placeholder = "Search products..."
         searchBar.delegate = self
 
         resultLabel.text = "Enter search text"
