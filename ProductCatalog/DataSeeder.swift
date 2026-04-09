@@ -3,6 +3,8 @@ import CoreData
 
 class DataSeeder {
 
+    // Ensures sample data is only inserted once
+    
     static func seedIfNeeded(context: NSManagedObjectContext) {
         let request: NSFetchRequest<Product> = Product.fetchRequest()
 
