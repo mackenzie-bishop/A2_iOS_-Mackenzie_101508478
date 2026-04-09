@@ -1,15 +1,20 @@
 import UIKit
 import CoreData
 
+// Screen for adding a new product to the database
 class AddProductViewController: UIViewController {
 
+    // Input fields for product details
     private let idField = UITextField()
     private let nameField = UITextField()
     private let descField = UITextField()
     private let priceField = UITextField()
     private let providerField = UITextField()
+    
+    // Button used to save a new product
     private let saveButton = UIButton(type: .system)
 
+    // Access Core Data context
     private var context: NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
@@ -54,6 +59,7 @@ class AddProductViewController: UIViewController {
         ])
     }
 
+    // Validates user input and saves a new product
     @objc private func saveTapped() {
         guard
             let idText = idField.text, let id = Int32(idText),
@@ -66,6 +72,7 @@ class AddProductViewController: UIViewController {
             return
         }
 
+        // Check for duplicate Product ID
         let request: NSFetchRequest<Product> = Product.fetchRequest()
         request.predicate = NSPredicate(format: "productID == %d", id)
 
@@ -81,6 +88,7 @@ class AddProductViewController: UIViewController {
             return
         }
 
+        // Create and populate new product object
         let product = Product(context: context)
         product.productID = id
         product.name = name
@@ -97,6 +105,7 @@ class AddProductViewController: UIViewController {
         }
     }
 
+    // Clears all form fields after a successful save
     private func clearFields() {
         idField.text = ""
         nameField.text = ""
