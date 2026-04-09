@@ -23,6 +23,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         super.viewDidLoad()
         title = "Search"
         view.backgroundColor = .systemBackground
+        
+        // MARK: - UI Setup
         setupUI()
     }
 
@@ -54,6 +56,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     // Called when user taps search on keyboard
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+        
+        // MARK: - Search Logic
         performSearch(text: searchBar.text ?? "")
     }
 
