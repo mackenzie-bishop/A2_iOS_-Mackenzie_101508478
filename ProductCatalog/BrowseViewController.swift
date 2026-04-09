@@ -1,19 +1,25 @@
 import UIKit
 import CoreData
 
+// Displays products one at a time and allows navigation between them
 class BrowseViewController: UIViewController {
 
+    // Array holding all products
     private var products: [Product] = []
     private var currentIndex: Int = 0
 
+    // UI elements for displaying product details
     private let idLabel = UILabel()
     private let nameLabel = UILabel()
     private let descLabel = UILabel()
     private let priceLabel = UILabel()
     private let providerLabel = UILabel()
+    
+    // Navigation buttons
     private let previousButton = UIButton(type: .system)
     private let nextButton = UIButton(type: .system)
 
+    // Access Core Data context from AppDelegate
     private var context: NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
@@ -30,6 +36,7 @@ class BrowseViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // Refresh data in case products were added/changed
         fetchProducts()
         if currentIndex >= products.count {
             currentIndex = max(0, products.count - 1)
@@ -82,6 +89,7 @@ class BrowseViewController: UIViewController {
         }
     }
 
+    // Updates UI with the currently selected product
     private func showCurrentProduct() {
         guard !products.isEmpty else {
             idLabel.text = "No products found"
